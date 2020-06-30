@@ -11,6 +11,9 @@ def application(environ, start_response):
 	a,b = int(a),int(b)
         sum = a + b
 	multi = a * b
+    else:
+	sum = 0
+	multi = 0
     response_body = html % {'sum':sum, 'multi':multi}
     start_response('200 OK', [
         ('Content-Type', 'text/html'),
