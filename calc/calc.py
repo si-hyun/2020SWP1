@@ -7,13 +7,14 @@ def application(environ, start_response):
     b = d.get('b', [''])[0]
     sum = 0
     multi = 0 
-    if ''not in [a,b]:
+    if a.isdigit() and b.isdigit():
+    try:
 	a,b = int(a),int(b)
         sum = a + b
 	multi = a * b
-    else:
-	sum = 0
-	multi = 0
+    except ValueError:
+	sum = -1
+	multi = -1
     response_body = html % {'sum':sum, 'multi':multi}
     start_response('200 OK', [
         ('Content-Type', 'text/html'),
