@@ -7,7 +7,7 @@ html = """
 	    <input type="submit">
 	</form>
 	sum = %(sum)d <br>
-	multi = &(multi)d
+	multi = %(multi)d
     </body>
 </html>
 """
